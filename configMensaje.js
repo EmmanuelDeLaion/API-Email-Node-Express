@@ -1,15 +1,16 @@
 const nodemailer = require('nodemailer');
+
 module.exports = (formulario) => {
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
             user: 'jesuspin2626@gmail.com',
-            pass: 'nsnoiqgirpdzjekv'
+            pass: '*************'
         }
     });
     const mailOptions = {
         from: `”${formulario.nombre}” <${formulario.correo}>`,
-        to: 'deleon.lerma.17163@itsmante.edu.mx',
+        to: 'jesuspin26261@gmail.com',
         subject: 'Contacto',
         html: `
         <div style="position: relative;  padding: 10px; background: linear-gradient(to bottom, #A758AE, #786EC1);
@@ -33,7 +34,7 @@ module.exports = (formulario) => {
         </footer>    
  `
     };
-    transporter.sendMail(mailOptions, function (err, info) {
+    transporter.sendMail(mailOptions, function(err, info) {
         if (err)
             console.log(err)
         else
